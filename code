@@ -1,0 +1,459 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Khloe Boutique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .hero {
+      background-color: #e4e5e7;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero h2 {
+      font-size: 22px;
+      margin: 0 0 15px;
+    }
+    .hero button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .featured {
+      font-size: 32px;
+      margin: 40px 0 20px;
+      text-align: center;
+    }
+    .collection {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .collection img {
+      width: 220px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .season {
+      font-size: 28px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .description {
+      max-width: 700px;
+      margin: 20px auto 60px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .product-details-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .product-details-section h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .product-details-section .price {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .color-options, .size-options {
+      margin-bottom: 20px;
+    }
+    .color-options .color, .size-options button {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .color-options .color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .color-red { background-color: red; }
+    .color-black { background-color: black; }
+    .color-grey { background-color: grey; }
+    .add-to-cart {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Maison Khloe</div>
+    <nav>
+      <ul>
+        <li><a href="#">New In</a></li>
+        <li><a href="#">Tops</a></li>
+        <li><a href="#">Dresses</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <span>Search</span>
+      <span>Cart</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>Exclusive Women's Collection - Up to 50% Off</h2>
+    <button>Shop Now</button>
+  </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <style>
+    /* Basic Styles */
+    .collection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item {
+      width: 250px;
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .item img {
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .item img:hover {
+      transform: scale(1.05);
+    }
+
+    .price {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .feature {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .modal button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal button:hover {
+      background-color: #555;
+    }
+
+    .size-options {
+      margin-top: 15px;
+    }
+
+    .size-options button {
+      padding: 8px 12px;
+      margin: 5px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .size-options button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="collection">
+    <div class="item" onclick="openModal('Summer Blouse', 'Rs. 7,800.00', 'Floral wrap dress in soft cotton.', 'https://maisonkhloe.ca/cdn/shop/files/30510263_193911_350.jpg?v=1742521460&width=990')">
+      <img src="https://maisonkhloe.ca/cdn/shop/files/30510263_193911_350.jpg?v=1742521460&width=990" alt="Look 4">
+      <h4>Summer Blouse</h4>
+      <p class="price">Rs. 7,800.00</p>
+      <p class="feature">Floral wrap dress in soft cotton.</p>
+    </div>
+    <div class="item" onclick="openModal('shorts-shirt', 'Rs. 9,400.00', 'hoirt sleeve rolled hem cotton blouse the look of linen.', 'https://maisonkhloe.ca/cdn/shop/files/model-blue-shorts-shirt.jpg?v=1741283181&width=990')">
+      <img src="https://maisonkhloe.ca/cdn/shop/files/model-blue-shorts-shirt.jpg?v=1741283181&width=990" alt="Look 4">
+      <h4>Short-shirt</h4>
+      <p class="price">Rs. 9,400.00</p>
+      <p class="feature">hoirt sleeve rolled hem cotton blouse the look of linen.</p>
+    </div>
+    <div class="item" onclick="openModal('Denim', 'Rs. 6,600.00', 'comfort and style with EsQualo's Wide Denim with Stretch.', 'https://maisonkhloe.ca/cdn/shop/files/HS25.12215_650_10.jpg?v=1745488778&width=990')">
+      <img src="https://maisonkhloe.ca/cdn/shop/files/HS25.12215_650_10.jpg?v=1745488778&width=990" alt="Look 4">
+      <h4>Denim</h4>
+      <p class="price">Rs. 6,600.00</p>
+      <p class="feature">comfort and style with EsQualo's Wide Denim with Stretch.</p>
+    </div>
+    <div class="item" onclick="openModal('Telsi Wrap Dress', 'Rs. 9,400.00', 'A little flirty with a ruffle edge, dress drapes and moves nicely.', 'https://maisonkhloe.ca/cdn/shop/files/4213256df0e32558b74e521bb3218b5595907bbabfee7f7c3c2328923373c019.jpg?v=1738979516&width=990')">
+      <img src='https://maisonkhloe.ca/cdn/shop/files/4213256df0e32558b74e521bb3218b5595907bbabfee7f7c3c2328923373c019.jpg?v=1738979516&width=990', 'https://maisonkhloe.ca/cdn/shop/files/1b4d72ed9365f499aac8cd6675714bd624eda28c1faebcba43b5910d00bfae7e.jpg?v=1738979516&width=990' alt="Look 4">
+      <h4>Telsi Wrap Dress</h4>
+      <p class="price">Rs. 9,400.00</p>
+      <p class="feature">A little flirty with a ruffle edge, dress drapes and moves nicely.</p>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Product Image" style="width: 100%; height: auto; border-radius: 5px;">
+      <h4 id="modalTitle"></h4>
+      <p id="modalPrice"></p>
+      <p id="modalFeature"></p>
+      <div class="size-options">
+        <button>Small</button>
+        <button>Medium</button>
+        <button>Large</button>
+      </div>
+      <button onclick="addToCart()">Add to Cart</button>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, price, feature, imageSrc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalPrice').innerText = price;
+      document.getElementById('modalFeature').innerText = feature;
+      document.getElementById('modalImage').src = imageSrc;
+      document.getElementById('productModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('productModal').style.display = 'none';
+    }
+
+    function addToCart() {
+      alert("Item added to cart!");
+      closeModal();
+    }
+    
+  </script>
+</body>
+</html>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Footer Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .subscribe {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+    }
+
+    .subscribe h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .subscribe-form button {
+      padding: 10px 15px;
+      margin-left: 5px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .payment-icons img {
+      width: 40px;
+      margin: 10px 5px;
+    }
+
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Subscription -->
+<section class="subscribe">
+  <h2>Subscribe to our emails</h2>
+  <p>Be the first to know about new collections and exclusive offers.</p>
+  <form class="subscribe-form">
+    <input type="email" placeholder="Email" required>
+    <button type="submit">→</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <label for="country">Country/region</label>
+    <select id="country">
+      <option>India | INR ₹</option>
+      <option>USA | USD $</option>
+      <option>UK | GBP £</option>
+    </select>
+  </div>
+  <div class="footer-links">
+    <a href="#">Refund policy</a>
+    <a href="#">Privacy policy</a>
+    <a href="#">Terms of service</a>
+    <a href="#">Contact information</a>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+  </div>
+  <div class="payment-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+    <img src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="MasterCard">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal">
+  </div>
+  <p>© 2025, Your Shop Name. All rights reserved.</p>
+</footer>
+
+<!-- Floating Chat Button -->
+<div class="chat-button" onclick="openChat()">💬</div>
+
+<script>
+  document.querySelector(".subscribe-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you for subscribing!");
+  });
+
+  function openChat() {
+    alert("Chat support will be available soon.");
+  }
+</script>
+
+</body>
+</html>
+
